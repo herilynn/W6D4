@@ -18,12 +18,12 @@ class Artwork < ApplicationRecord
         class_name: :User 
 
     has_many :shares,
-    foreign_key: :artwork_id,
-    class_name: :ArtworkShare,
-    dependent: :destroy
+        foreign_key: :artwork_id,
+        class_name: :ArtworkShare,
+        dependent: :destroy
 
     has_many :shared_viewers,
-    through: :shares,
-    source: :viewer
+        through: :shares,
+        source: :viewer
 
 end
